@@ -29,7 +29,7 @@ db.once('open', function () {
 
 var data = fs.readFileSync("db/product_list.json")
 
-
+//Partie à decommenter pour intialiser la base de donnée.
 // Product.remove({}, function (err) {
 //   Product.collection.insertMany(JSON.parse(data), err => {
 //     if (err) {
