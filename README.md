@@ -1,9 +1,9 @@
-Framework et technologies : 
+# Framework et technologies : 
 
-RESTFUL API en Node.js
-NoSqL Database en Mongodb.
+- RESTFUL API en Node.js, 
+- NoSqL Database en Mongodb.
 
-Comment lancer l'application : 
+# Comment lancer l'application : 
 
 - Décommenter la partie indquer dans le fichier 'apiServer/db/database.js' afin d'initaliser la base de données au premier demarrage du serveur.
 - Dans le dossier (pharmacie_webproj) 
@@ -27,8 +27,9 @@ Les requetes api se font sur http://localhost:8888/api/
 - DELETE http://localhost:8888/api/product/{id} pour supprimer un produit
 
 
-HOWTO:
--Uncomment in db/database.js
--npm install
--npm run start
+# HOWTO:
+- Uncomment in db/database.js
+- npm install
+- npm run start
 - server is running on http://localhost:8888/
+- http://localhost:8888/swaggger
