@@ -1,0 +1,86 @@
+<!DOCTYPE html utf-8>
+<html lang="fr">
+
+<head>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./script.js"></script>
+</head>
+
+<body>
+
+
+  <div class="container">
+
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-10">
+
+      <div class="row">
+        <div class="lowProduct">
+          <h1>Produits en faible quantite</h1>
+          <h6><i>Cliquer pour commander 100</i></h6>
+          <!-- <table class="listlp">
+             <tr><td>Nom</td><td>Quantite</td><td>Commander</td></tr> 
+             <tr><td>Nom</td><td>Produit</td><td>Quantite</td><td>Commander</td></tr> 
+          </table> -->
+          <div class="listlp"></div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <hr>
+        <H1>Obtenir tous les produits</H1>
+        <button class="getAllProducts">Tous les produits</button>
+        <div class="listAll"></div>
+
+      </div>
+
+
+      <div class="row">
+          <hr>
+          <H1>Obtenir un produit par son identifiant</H1>
+          <input class="inputId" type="text" placeholder="182">
+          <button class="getById">Get</button>
+          <div class="elementFind"></div>
+      </div>
+
+      <div class="row">
+          <hr>
+          <H1>Recherche par chaine de caracteres </H1>
+          <input class="searchString" type="text" placeholder="string">
+          <button class="getByString">Get</button>
+          <div class="results"></div>
+  
+      </div>
+
+      <div class="row">
+          <hr>
+          <H1>Ajouter un produit</H1>
+          <p>Name :</p> <input class="addName" type="text" placeholder="string" label="naem"> 
+          <p>PID :</p>  <input class="addPID" type="text" placeholder="string">
+          <p>Prix</p>  <input class="addPrice" type="text" placeholder="string">
+          <p>Quantite :</p> <input class="addQuantity" type="text" placeholder="string">
+          <p>A propos : </p> <input class="addAbout" type="text" placeholder="string"> <br>
+          <br>
+          <button class="addNew">Get</button>
+          <div class="added"></div>
+  
+        </div>
+
+    </div>
+
+    <div class="col-sm-1"></div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</body>
+
+</html>

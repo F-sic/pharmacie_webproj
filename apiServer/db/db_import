@@ -1,0 +1,1 @@
+mongoimport --db pharmadb  --collection product  --type json --file db/product_list.json --jsonArray
