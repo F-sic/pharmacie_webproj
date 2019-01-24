@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $.getJSON("http://localhost:8888/api/products/low")
+  $.getJSON("http://localhost:8888/api/products?low=30")
     .done(function (data, status) {
       if (data[0]) { $(".lowProduct").show() }
       else { $(".lowProduct").hide() }
@@ -66,7 +66,7 @@ $(document).ready(function () {
     console.log(search);
     $(".results").html("");
     if (search.length != 0) {
-      $.getJSON("http://localhost:8888/api/search", { st: search })
+      $.getJSON("http://localhost:8888/api/products", { st: search })
         .done(function (data, status) {
           console.log('ok');
           if (data.length == 0) { $('.results').append('Aucun produit ne correspond a cette recherche') }

@@ -32,6 +32,17 @@ module.exports = function (app, db) {
  *     description: Retourne un tableau de tous les produits present dans la base
  *     produces:
  *       - application/json
+ *     parameters:
+ *       - name: st
+ *         description: Chaine de caractere recherchée
+ *         in: query
+ *         required: false
+ *         type: string
+ *       - name: low
+ *         description: quantité a surveiller
+ *         in: query
+ *         required: false
+ *         type: integer
  *     responses:
  *       200:
  *         description: An array of products
@@ -40,22 +51,22 @@ module.exports = function (app, db) {
  */
   app.get('/api/products', controller.getAll)            // all + alerte 
  
-/**
- * @swagger
- * /api/products/low:
- *   get:
- *     tags:
- *       - Products
- *     description: Retourne un tableau de tous les produits present dans la base ou la quantité est inférieur a une certaine valeur
- *     produces:
- *       - application/json
- *     responses:
- *       200:
- *         description: An array of products
- *         schema:
- *           $ref: '#/definitions/Product'
- */
-  app.get('/api/products/low', controller.getLow)            // alerte 
+// /**
+//  * @swagger
+//  * /api/products/low:
+//  *   get:
+//  *     tags:
+//  *       - Products
+//  *     description: Retourne un tableau de tous les produits present dans la base ou la quantité est inférieur a une certaine valeur
+//  *     produces:
+//  *       - application/json
+//  *     responses:
+//  *       200:
+//  *         description: An array of products
+//  *         schema:
+//  *           $ref: '#/definitions/Product'
+//  */
+//   app.get('/api/products/low', controller.getLow)            // alerte 
 
 /**
  * @swagger
@@ -150,26 +161,26 @@ app.get('/api/products/:id', controller.getId)             //info from add
  */
   app.post('/api/products', controller.create) ///add new product
   
-/**
- * @swagger
- * /api/search:
- *   get:
- *     tags:
- *       - Products
- *     description: recherche un chaine de caractere dans le nom d'un produit
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: st
- *         description: Chqine de caractere recherchée
- *         in: query
- *         required: true
- *         type: string
- *     responses:
- *       200:
- *         description: An array of products
- *         schema:
- *           $ref: '#/definitions/Product'
- */
-  app.get('/api/search', controller.search)  // search by name
+// /**
+//  * @swagger
+//  * /api/search:
+//  *   get:
+//  *     tags:
+//  *       - Products
+//  *     description: recherche un chaine de caractere dans le nom d'un produit
+//  *     produces:
+//  *       - application/json
+//  *     parameters:
+//  *       - name: st
+//  *         description: Chqine de caractere recherchée
+//  *         in: query
+//  *         required: true
+//  *         type: string
+//  *     responses:
+//  *       200:
+//  *         description: An array of products
+//  *         schema:
+//  *           $ref: '#/definitions/Product'
+//  */
+//   app.get('/api/search', controller.search)  // search by name
 }

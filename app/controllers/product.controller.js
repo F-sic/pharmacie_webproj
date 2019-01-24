@@ -5,31 +5,52 @@ let Product = require('../../db/database.js').Product
 // get all Product
 exports.getAll = function (req, res, next) {
   console.log("################################Querying all product#######################")
-  Product.find({},{ _id: false }, function (err, query) {
-    if (err) {
-      res.status(500)
-      return next(err)
-    }
-    res.json(query).status(200)
-  })
+  if ( typeof req.query.st !== "undefined") {
+    Product.find({ name: { $regex: '.*' + req.query.st + '.*' } }, { _id: false }, function (err, query) {
+      if (err) {
+        res.status(500)
+        throw err
+      }
+      res.json(query).status(200)
+      console.log(query)
+      
+    })
+  } else if (typeof req.query.low !== "undefined") {
+    Product.find({ quantity: { $lt: req.query.low } }, { _id: false }, function (err, query) {
+      if (err) {
+        res.status(500)
+        return next(err)
+      }
+      res.json(query).status(200)
+    })
+    
+  } else {
+    Product.find({}, { _id: false }, function (err, query) {
+      if (err) {
+        res.status(500)
+        return next(err)
+      }
+      res.json(query).status(200)
+    })
+  }
 }
 
-// get all low quantity products
-exports.getLow = function (req, res, next) {
-  console.log("################################Querying low quantity products#######################")
-  Product.find({ quantity: { $lt: 90 } },{ _id: false }, function (err, query) {
-    if (err) {
-      res.status(500)
-      return next(err)
-    }
-    res.json(query).status(200)
-  })
-}
+// // get all low quantity products
+// exports.getLow = function (req, res, next) {
+//   console.log("################################Querying low quantity products#######################")
+//   Product.find({ quantity: { $lt: 90 } },{ _id: false }, function (err, query) {
+//     if (err) {
+//       res.status(500)
+//       return next(err)
+//     }
+//     res.json(query).status(200)
+//   })
+// }
 
 // get a product by it's PID
 exports.getId = async function (req, res) {
   console.log("################################Querying one product#######################")
-  await Product.find({ PID: req.params.id },{ _id: false }, function (err, query) {
+  await Product.find({ PID: req.params.id }, { _id: false }, function (err, query) {
     if (err) {
       res.status(500)
       return next(err)
@@ -83,16 +104,16 @@ exports.delete = function (req, res, next) {
 }
 
 // search a string  in a product name
-exports.search = function (req, res) {
-  console.log("################################SEARCH A PRODUCT#######################")
-  console.log(req.query)
-  Product.find({ name: { $regex: '.*' + req.query.st + '.*' } },{ _id: false }, function (err, query) {
-    if (err) {
-      res.status(500)
-      throw err
-    }
-    res.json(query).status(200)
-    console.log(query)
+// exports.search = function (req, res) {
+//   console.log("################################SEARCH A PRODUCT#######################")
+//   console.log(req.query)
+//   Product.find({ name: { $regex: '.*' + req.query.st + '.*' } },{ _id: false }, function (err, query) {
+//     if (err) {
+//       res.status(500)
+//       throw err
+//     }
+//     res.json(query).status(200)
+//     console.log(query)
 
-  })
-}
+//   })
+// }
