@@ -16,8 +16,9 @@
 - cors : cross origin resource sharing, configure le serveur pour comminquer avec d'autres serveur ex: serveur en localhost:8888, et front en localhost 1234
 
 ## Front HTML/JS:
-Le but de ce front leger est de pouvoir tester graphiquement les differentes fonctionnalités de l'application : 
-- 
+- Le but de ce front leger est de pouvoir tester graphiquement les differentes fonctionnalités de l'application : 
+- HTML et Bootstrap pour le design,
+- JQuery pour les interaction avec l'api.
 
 # Comment lancer l'application : 
 
