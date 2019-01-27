@@ -1,12 +1,12 @@
-## Technologies : 
+# Technologies : 
 
 - RESTFUL API en Node.js, 
 - NoSqL Database en Mongodb.
 - HTML/Js e t bibliothèque jQuery, pour la réalisation d'un front de démonstration
 
-## Framework et modules uilisés :
+# Framework et modules uilisés :
 
-# Serveur NodeJs : 
+## Serveur NodeJs : 
 - Swagger : description des fonctionnalités de l'api, test de l'api,
 - Express : créer des webs app avec nodeJs, gestion des routes
 - Nodemon : relance le programme dès la modification et sauvegade d'un fichier,
@@ -15,11 +15,11 @@
 - body-parser : recuperer les donnés contenue dans les body d'une rquete,  via "req.body",
 - cors : cross origin resource sharing, configure le serveur pour comminquer avec d'autres serveur ex: serveur en localhost:8888, et front en localhost 1234
 
-# Front HTML/JS:
+## Front HTML/JS:
 Le but de ce front leger est de pouvoir tester graphiquement les differentes fonctionnalités de l'application : 
 - 
 
-## Comment lancer l'application : 
+# Comment lancer l'application : 
 
 - Décommenter la partie indquer dans le fichier 'apiServer/db/database.js' afin d'initaliser la base de données au premier demarrage du serveur.
 - Dans le dossier (pharmacie_webproj) 
@@ -43,7 +43,7 @@ Les requetes api se font sur http://localhost:8888/api/
 - DELETE http://localhost:8888/api/product/{id} pour supprimer un produit
 
 
-## HOWTO:
+# HOWTO:
 - Uncomment in db/database.js
 - npm install
 - npm run start
