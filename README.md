@@ -24,8 +24,11 @@
 - HTML et Bootstrap pour le design,
 - JQuery pour les interaction avec l'api.
 
-# Comment lancer l'application : 
+# Prérequis :
+  - NodeJs & npm
+  - MongoDB
 
+# Comment lancer l'application : 
 - Décommenter la partie indquer dans le fichier 'apiServer/db/database.js' afin d'initaliser la base de données au premier demarrage du serveur.
 - Dans le dossier (pharmacie_webproj) 
 - Saisir dans le terminal la commande 'npm install'
