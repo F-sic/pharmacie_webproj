@@ -1,5 +1,5 @@
 # Etienne CECCALDI et Francois SICILIANO.
-## Projet de Web tendances et evolution
+## Projet de Web tendances et évolutions
 **Sujet : réalistion d'une web API REST pour la gestion de édicaments dans une pharmacie.**
 
 # Technologies : 
