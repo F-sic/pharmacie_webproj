@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $.getJSON("http://localhost:8888/api/products?low=30")
+  $.getJSON("http://localhost:8888/api/1.0/products?low=30")
     .done(function (data, status) {
       if (data[0]) { $(".lowProduct").show() }
       else { $(".lowProduct").hide() }
@@ -9,7 +9,7 @@ $(document).ready(function () {
         //  var but = $('<td><a> + </a></td></tr>')
         var com = '<span>' + obj.name + ' Quantity :  ' + obj.quantity
         var but = $('<button> Order </button></span> </br>')
-        but.on('click', function (event) { order(obj, 100) });
+        but.on('click', function (event) { order(obj, 100, true) });
         $('.listlp').append(com).append(but)
       })
     });
@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 
   $(".getAllProducts").click(function () {
-    $.getJSON("http://localhost:8888/api/products/")
+    $.getJSON("http://localhost:8888/api/1.0/products/")
       .done(function (data, status) {
         $(".listAll").html("")
         $.each(data, function (i, obj) {
@@ -41,7 +41,7 @@ $(document).ready(function () {
     var id = $(".inputId").val();
     console.log(id);
     if (id.length != 0) {
-      $.getJSON("http://localhost:8888/api/products/" + id)
+      $.getJSON("http://localhost:8888/api/1.0/products/" + id)
         .done(function (data, status) {
           $(".elementFind").html("");
           if (data.length == 0) { $('.elementFind').append('Aucun produit ne correspond a cet ID') }
@@ -66,7 +66,7 @@ $(document).ready(function () {
     console.log(search);
     $(".results").html("");
     if (search.length != 0) {
-      $.getJSON("http://localhost:8888/api/products", { st: search })
+      $.getJSON("http://localhost:8888/api/1.0/products", { st: search })
         .done(function (data, status) {
           console.log('ok');
           if (data.length == 0) { $('.results').append('Aucun produit ne correspond a cette recherche') }
@@ -96,7 +96,7 @@ $(document).ready(function () {
     $(".added").html("");
     if (APID.length != 0) {
       $.ajax({
-        url: 'http://localhost:8888/api/products/',
+        url: 'http://localhost:8888/api/1.0/products/',
         type: 'POST',
         processData: false,
         contentType: 'application/json',
@@ -117,7 +117,7 @@ $(document).ready(function () {
 function order(obj, order, bool) {
   obj.quantity += order
   $.ajax({
-    url: 'http://localhost:8888/api/products/' + obj.PID,
+    url: 'http://localhost:8888/api/1.0/products/' + obj.PID,
     type: 'PUT',
     processData: false,
     contentType: 'application/json',
@@ -133,7 +133,7 @@ function order(obj, order, bool) {
 
 function del(obj) {
   $.ajax({
-    url: 'http://localhost:8888/api/products/' + obj.PID,
+    url: 'http://localhost:8888/api/1.0/products/' + obj.PID,
     type: 'DELETE',
     processData: false,
     contentType: 'application/json',

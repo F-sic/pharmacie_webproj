@@ -25,7 +25,7 @@ module.exports = function (app, db) {
 
 /**
  * @swagger
- * /api/products:
+ * /api/1.0/products:
  *   get:
  *     tags:
  *       - Products
@@ -49,11 +49,11 @@ module.exports = function (app, db) {
  *         schema:
  *           $ref: '#/definitions/Product/'
  */
-  app.get('/api/products', controller.getAll)            // all + alerte 
+  app.get('/api/1.0/products', controller.getAll)            // all + alerte 
  
 // /**
 //  * @swagger
-//  * /api/products/low:
+//  * /api/1.0/products/low:
 //  *   get:
 //  *     tags:
 //  *       - Products
@@ -66,11 +66,11 @@ module.exports = function (app, db) {
 //  *         schema:
 //  *           $ref: '#/definitions/Product'
 //  */
-//   app.get('/api/products/low', controller.getLow)            // alerte 
+//   app.get('/api/1.0/products/low', controller.getLow)            // alerte 
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/1.0/products/{id}:
  *   get:
  *     tags:
  *       - Products
@@ -89,11 +89,11 @@ module.exports = function (app, db) {
  *         schema:
  *           $ref: '#/definitions/Product'
  */
-app.get('/api/products/:id', controller.getId)             //info from add 
+app.get('/api/1.0/products/:id', controller.getId)             //info from add 
 
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/1.0/products/{id}:
  *   put:
  *     tags:
  *       - Products
@@ -116,11 +116,11 @@ app.get('/api/products/:id', controller.getId)             //info from add
  *       200:
  *         description: Successfully updated
  */
-  app.put('/api/products/:id', controller.updQty)              //update a product
+  app.put('/api/1.0/products/:id', controller.updQty)              //update a product
   
 /**
  * @swagger
- * /api/products/{id}:
+ * /api/1.0/products/{id}:
  *   delete:
  *     tags:
  *       - Products
@@ -137,11 +137,11 @@ app.get('/api/products/:id', controller.getId)             //info from add
  *       200:
  *         description: Successfully deleted
  */
-  app.delete('/api/products/:id', controller.delete)            //delete product
+  app.delete('/api/1.0/products/:id', controller.delete)            //delete product
 
 /**
  * @swagger
- * /api/products:
+ * /api/1.0/products:
  *   post:
  *     tags:
  *       - Products
@@ -159,11 +159,11 @@ app.get('/api/products/:id', controller.getId)             //info from add
  *       200:
  *         description: Successfully created
  */
-  app.post('/api/products', controller.create) ///add new product
+  app.post('/api/1.0/products', controller.create) ///add new product
   
 // /**
 //  * @swagger
-//  * /api/search:
+//  * /api/1.0/search:
 //  *   get:
 //  *     tags:
 //  *       - Products
@@ -182,5 +182,5 @@ app.get('/api/products/:id', controller.getId)             //info from add
 //  *         schema:
 //  *           $ref: '#/definitions/Product'
 //  */
-//   app.get('/api/search', controller.search)  // search by name
+//   app.get('/api/1.0/search', controller.search)  // search by name
 }
