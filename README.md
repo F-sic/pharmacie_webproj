@@ -41,14 +41,14 @@
 - un doc Swagger decrivant l'api, http://localhost:8888/swagger
 
 **Les requetes api se font sur http://localhost:8888/api/**
-- GET http://localhost:8888/api/products pour recuperer tous les produits
-- GET http://localhost:8888/api/products?st=xxx pour recuperer tous les produits contenant une chaine de caracteres dans leurs nom
-- GET http://localhost:8888/api/products?low=xxx pour recuperer tous les produits ou la quantité est inferieur a low
-- POST http://localhost:8888/api/products pour acheter un produit
+- GET http://localhost:8888/api/1.0/products pour recuperer tous les produits
+- GET http://localhost:8888/api/1.0/products?st=xxx pour recuperer tous les produits contenant une chaine de caracteres dans leurs nom
+- GET http://localhost:8888/api/1.0/products?low=xxx pour recuperer tous les produits ou la quantité est inferieur a low
+- POST http://localhost:8888/api/1.0/products pour acheter un produit
 
-- GET http://localhost:8888/api/product/{id} pour recuper un produit
-- PUT http://localhost:8888/api/product/{id} pour mettre a jour un produit
-- DELETE http://localhost:8888/api/product/{id} pour supprimer un produit
+- GET http://localhost:8888/api/1.0/product/{id} pour recuper un produit
+- PUT http://localhost:8888/api/1.0/product/{id} pour mettre a jour un produit
+- DELETE http://localhost:8888/api/1.0/product/{id} pour supprimer un produit
 
 
 # HOWTO:
